@@ -1158,7 +1158,7 @@ static void ndpi_init_protocol_defaults(struct ndpi_detection_module_struct *ndp
 			  ndpi_build_default_ports(ports_a, 0, 0, 0, 0, 0) /* TCP */,
 			  ndpi_build_default_ports(ports_b, 0, 0, 0, 0, 0) /* UDP */);
   ndpi_set_proto_defaults(ndpi_str, NDPI_PROTOCOL_ACCEPTABLE, NDPI_PROTOCOL_MSSQL_TDS, 0 /* can_have_a_subprotocol */,
-			  no_master, no_master, "MsSQL-TDS", NDPI_PROTOCOL_CATEGORY_DATABASE,
+			  no_master, no_master, "MsSQL_TDS", NDPI_PROTOCOL_CATEGORY_DATABASE,
 			  ndpi_build_default_ports(ports_a, 1433, 1434, 0, 0, 0) /* TCP */,
 			  ndpi_build_default_ports(ports_b, 0, 0, 0, 0, 0) /* UDP */);
   ndpi_set_proto_defaults(ndpi_str, NDPI_PROTOCOL_ACCEPTABLE, NDPI_PROTOCOL_PPTP, 0 /* can_have_a_subprotocol */,
@@ -1332,7 +1332,7 @@ static void ndpi_init_protocol_defaults(struct ndpi_detection_module_struct *ndp
 			  ndpi_build_default_ports(ports_a, 0, 0, 0, 0, 0) /* TCP */,
 			  ndpi_build_default_ports(ports_b, 0, 0, 0, 0, 0) /* UDP */);
   ndpi_set_proto_defaults(ndpi_str, NDPI_PROTOCOL_ACCEPTABLE, NDPI_PROTOCOL_WHOIS_DAS, 0 /* can_have_a_subprotocol */,
-			  no_master, no_master, "Whois-DAS", NDPI_PROTOCOL_CATEGORY_NETWORK,
+			  no_master, no_master, "Whois_DAS", NDPI_PROTOCOL_CATEGORY_NETWORK,
 			  ndpi_build_default_ports(ports_a, 43, 4343, 0, 0, 0), /* TCP */
 			  ndpi_build_default_ports(ports_b, 0, 0, 0, 0, 0));    /* UDP */
   ndpi_set_proto_defaults(ndpi_str, NDPI_PROTOCOL_ACCEPTABLE, NDPI_PROTOCOL_COLLECTD, 0 /* can_have_a_subprotocol */,
@@ -1452,7 +1452,7 @@ static void ndpi_init_protocol_defaults(struct ndpi_detection_module_struct *ndp
 			  ndpi_build_default_ports(ports_a, 8009, 0, 0, 0, 0) /* TCP */,
 			  ndpi_build_default_ports(ports_b, 0, 0, 0, 0, 0) /* UDP */);
   ndpi_set_proto_defaults(ndpi_str, NDPI_PROTOCOL_ACCEPTABLE, NDPI_PROTOCOL_TARGUS_GETDATA,
-			  0 /* can_have_a_subprotocol */, no_master, no_master, "Targus Dataspeed",
+			  0 /* can_have_a_subprotocol */, no_master, no_master, "Targus_Dataspeed",
 			  NDPI_PROTOCOL_CATEGORY_NETWORK,
 			  ndpi_build_default_ports(ports_a, 5001, 5201, 0, 0, 0) /* TCP */,
 			  ndpi_build_default_ports(ports_b, 5001, 5201, 0, 0, 0) /* UDP */);
@@ -1865,7 +1865,7 @@ static const char *categories[] = {
   "DataTransfer",
   "Web",
   "SocialNetwork",
-  "Download-FileTransfer-FileSharing",
+  "Download",
   "Game",
   "Chat",
   "VoIP",
@@ -2715,9 +2715,13 @@ int ndpi_load_categories_file(struct ndpi_detection_module_struct *ndpi_str, con
 
     if(name) {
       category = strtok_r(NULL, "\t", &saveptr);
+      ndpi_protocol_category_t category_val = atoi(category);
+      if (category_val == 0)
+        category_val = ndpi_get_category_id(ndpi_str, category);
 
-      if(category) {
-	int rc = ndpi_load_category(ndpi_str, name, (ndpi_protocol_category_t) atoi(category));
+
+      if(category_val > 0) {
+       int rc = ndpi_load_category(ndpi_str, name, category_val);
 
 	if(rc >= 0)
 	  num++;
