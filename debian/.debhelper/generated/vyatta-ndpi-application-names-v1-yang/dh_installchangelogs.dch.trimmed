@@ -1,0 +1,107 @@
+ndpi (3.4-1vyatta2) unstable; urgency=medium
+
+  [ Paul Aitken ]
+  * DPI: remove libgcrypt from nDPI
+
+ -- Nicholas Brown <nick.brown@att.com>  Tue, 19 Jan 2021 16:24:31 +0000
+
+ndpi (3.4-1vyatta1) unstable; urgency=medium
+
+  [ Paul Aitken ]
+  * 3.0-2
+  * Update vyatta patches for 3.4
+  * Revert "Bump std-version to 4.5.0, and compat level to 13"
+  * add libgcrypt support in vyatta-generation
+  * disable some failing tests
+
+  [ Nick Brown ]
+  * add missing dependency
+
+ -- Nicholas Brown <nick.brown@att.com>  Mon, 18 Jan 2021 10:33:27 +0000
+
+ndpi (3.4-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * debian/copyright: use spaces rather than tabs to start continuation lines.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Gianfranco Costamagna ]
+  * New upstream version 3.4 (Closes: #972050)
+    - CVE-2020-11939 CVE-2020-11940 CVE-2020-15471
+    - CVE-2020-15472 CVE-2020-15473 CVE-2020-15474
+    - CVE-2020-15475 CVE-2020-15476
+  * Team upload (salsa.d.o namespace)
+  * Add R^3: no
+  * Add libgcrypt20-dev dependency, used for tests
+  * Update copyright years
+  * Bump std-version to 4.5.0, and compat level to 13
+  * Drop old define-have-json-c.patch: not needed anymore
+  * Rebase patches for new release (keeping one little library as static)
+  * Drop dh_auto_install override: txt files are now correctly
+    installed upstream
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 18 Dec 2020 10:50:44 +0100
+
+ndpi (3.0-2) unstable; urgency=medium
+
+  * Remove libndpi-wireshark package
+  * Change nDPI names to suit the vyatta CLI
+  * Add nDPI packages for application names and types
+  * Vyatta nDPI
+  * patch to increase NDPI_NUM_BITS from 512 to 1024
+  * add category name to category file
+
+ -- Paul Aitken <paul.aitken@att.com>  Mon, 03 Aug 2020 11:25:50 +0100
+
+ndpi (3.0-1) unstable; urgency=medium
+
+  * New upstream version 3.0
+  * Refresh patches
+  * Remove patches merged upstream:
+    - 662.patch
+    - aea91781aa476589361e16ece6aa6c10102e0f33.patca
+    - cross.patch
+    - ndpireader-no-free.patch
+    - packet-direction.patch
+    - quic.patch
+  * Rename package libndpi2.6 to libndpi3.0
+  * Update symbols file for libndpi3.0
+  * Update copyright
+  * Remove unnecessary override_dh_install, export WIRESHARK_PLUGINDIR, and
+    whitelist it in lintian.
+  * Update Standards-Version to 4.4.1
+  * Add all sources needed to build ndpiReader to libndpi-dev docs
+  * Remove .txt files installed in /usr/sbin
+  * Drop get-orig-source target from rules file
+  * Bump build-dependency on libwireshark-dev >= 3.0 as required by the
+    ndpi.lua plugin
+
+ -- Ludovico Cavedon <cavedon@debian.org>  Tue, 24 Dec 2019 19:22:40 +0100
+
+ndpi (2.6-5) unstable; urgency=medium
+
+  * Team upload (salsa.d.o namespace)
+  * Add CPPFLAGS to make blhc happy
+  * Also add LDFLAGS
+  * Bump compat level to 12
+  * Bump std-version to 4.4.0
+  * Make copyright URI in https mode
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 13 Sep 2019 23:04:00 +0200
+
+ndpi (2.6-4) unstable; urgency=medium
+
+  * Team upload (salsa.d.o namespace)
+  * debian/patches/662.patch:
+    - make the build reproducible (Closes: #929609)
+  * debian/patches/aea91781aa476589361e16ece6aa6c10102e0f33.patch:
+    - fix armhf failure with upstream patch (Closes: #917238)
+  * debian/patches/cross.patch:
+    - Patch from Helmut Grohne <helmut@subdivi.de> to fix FTCBFS on
+      cross-builds (Closes: #939286)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 11 Sep 2019 18:37:11 +0200
+
+# Older entries have been removed from this changelog.
+# To read the complete changelog use `apt changelog vyatta-ndpi-application-names-v1-yang`.

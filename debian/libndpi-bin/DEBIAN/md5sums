@@ -1,0 +1,7 @@
+1b4dc56d49d34c4bbf2e1cc037b600e1  usr/bin/ndpiReader
+acdcf85f9401129e937239a2e995c331  usr/share/doc/libndpi-bin/changelog.Debian.gz
+a25007bf313d7d0ba9160c8179f1b15d  usr/share/doc/libndpi-bin/changelog.gz
+17897f47f8261d84b61fac5be3316d0e  usr/share/doc/libndpi-bin/copyright
+aca6ed4f7226a7fe320039db01f4bdd6  usr/share/man/man1/ndpiReader.1.gz
+e8354a75e302e98b7dace7aa40486354  usr/share/ndpi/ndpiCustomCategory.txt
+b5450552cb1937d8789e2de5a4b99838  usr/share/ndpi/ndpiProtos.txt

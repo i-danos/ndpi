@@ -1,0 +1,14 @@
+Package: libndpi-bin-dbgsym
+Source: ndpi
+Version: 3.4-1vyatta2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Ludovico Cavedon <cavedon@debian.org>
+Installed-Size: 189
+Depends: libndpi-bin (= 3.4-1vyatta2)
+Breaks: libndpi-dbg (<< 1.8-1~)
+Replaces: libndpi-dbg (<< 1.8-1~)
+Section: debug
+Priority: optional
+Description: debug symbols for libndpi-bin
+Build-Ids: 5ffd5e09239266cb24f2cec218d9a43cd5d7dd17

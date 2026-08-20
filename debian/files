@@ -1,0 +1,10 @@
+libndpi-bin-dbgsym_3.4-1vyatta2_amd64.deb debug optional automatic=yes
+libndpi-bin_3.4-1vyatta2_amd64.deb libs optional
+libndpi-dev_3.4-1vyatta2_amd64.deb libdevel optional
+libndpi3.4-dbgsym_3.4-1vyatta2_amd64.deb debug optional automatic=yes
+libndpi3.4_3.4-1vyatta2_amd64.deb libs optional
+ndpi_3.4-1vyatta2_amd64.buildinfo libs optional
+vyatta-ndpi-application-names-v1-yang_3.4-1vyatta2_all.deb contrib/admin optional
+vyatta-ndpi-application-types-v1-yang_3.4-1vyatta2_all.deb contrib/admin optional
+vyatta-ndpi-show-name-dbgsym_3.4-1vyatta2_amd64.deb contrib/debug optional automatic=yes
+vyatta-ndpi-show-name_3.4-1vyatta2_amd64.deb contrib/admin optional

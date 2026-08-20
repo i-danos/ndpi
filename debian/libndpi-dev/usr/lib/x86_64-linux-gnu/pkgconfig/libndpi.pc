@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: libndpi
+Description: deep packet inspection library
+Version: 3.4.0
+Libs: -L${libdir} -lndpi 
+Cflags: -I${includedir}/ndpi

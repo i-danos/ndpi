@@ -1,0 +1,14 @@
+Package: vyatta-ndpi-show-name-dbgsym
+Source: ndpi
+Version: 3.4-1vyatta2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Ludovico Cavedon <cavedon@debian.org>
+Installed-Size: 638
+Depends: vyatta-ndpi-show-name (= 3.4-1vyatta2)
+Breaks: libndpi-dbg (<< 1.8-1~)
+Replaces: libndpi-dbg (<< 1.8-1~)
+Section: contrib/debug
+Priority: optional
+Description: debug symbols for vyatta-ndpi-show-name
+Build-Ids: 4a4658b4491898188b5595c2c8a783b3af70064b

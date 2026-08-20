@@ -1,0 +1,11 @@
+Package: vyatta-ndpi-application-names-v1-yang
+Source: ndpi
+Version: 3.4-1vyatta2
+Architecture: all
+Maintainer: Ludovico Cavedon <cavedon@debian.org>
+Installed-Size: 34
+Section: contrib/admin
+Priority: optional
+Homepage: http://www.ntop.org/products/ndpi/
+Description: ndpi application name yang definitions
+ The nDPI application name YANG definitions

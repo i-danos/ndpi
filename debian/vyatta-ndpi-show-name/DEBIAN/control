@@ -1,0 +1,12 @@
+Package: vyatta-ndpi-show-name
+Source: ndpi
+Version: 3.4-1vyatta2
+Architecture: amd64
+Maintainer: Ludovico Cavedon <cavedon@debian.org>
+Installed-Size: 975
+Depends: libc6 (>= 2.34)
+Section: contrib/admin
+Priority: optional
+Homepage: http://www.ntop.org/products/ndpi/
+Description: show information about nDPI names
+ Show nDPI name/type mapping information

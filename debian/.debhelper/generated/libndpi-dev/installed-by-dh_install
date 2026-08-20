@@ -1,0 +1,4 @@
+debian/tmp/usr/include/ndpi
+debian/tmp/usr/lib/x86_64-linux-gnu/libndpi.a
+debian/tmp/usr/lib/x86_64-linux-gnu/libndpi.so
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig
